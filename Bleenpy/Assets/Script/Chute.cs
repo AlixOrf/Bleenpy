@@ -22,12 +22,10 @@ public class PlayerFallDetector : MonoBehaviour
     void ShowRetryScreen()
     {
         retryPanel.SetActive(true); // Affiche le panel Retry
-        Time.timeScale = 0f; // Arrête le jeu
     }
 
     public void Retry()
     {
-        Time.timeScale = 1f; // Relance le jeu
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Recharge la scène actuelle
     }
 }
