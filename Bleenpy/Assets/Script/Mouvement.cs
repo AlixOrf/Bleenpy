@@ -7,13 +7,14 @@ public class Mouvement : MonoBehaviour
     public GameObject world;
     public float horizontalInput;
     public float verticalInput;
+    public float speed = 5.0f; // Variable pour contrôler la vitesse de déplacement
     public enum orientation { Left, Right, Up, Down };
     public orientation myorientation;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,15 +23,15 @@ public class Mouvement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * Time.deltaTime * verticalInput,Space.World);
-        transform.Translate(Vector3.right * Time.deltaTime * horizontalInput, Space.World);
+        transform.Translate(Vector3.forward * Time.deltaTime * verticalInput * speed, Space.World);
+        transform.Translate(Vector3.right * Time.deltaTime * horizontalInput * speed, Space.World);
 
         Tourne();
     }
 
     void Tourne()
     {
-        if(horizontalInput > 0)
+        if (horizontalInput > 0)
         {
             myorientation = orientation.Right;
         }
@@ -38,7 +39,7 @@ public class Mouvement : MonoBehaviour
         {
             myorientation = orientation.Left;
         }
-        if(verticalInput > 0)
+        if (verticalInput > 0)
         {
             myorientation = orientation.Up;
         }
@@ -47,9 +48,10 @@ public class Mouvement : MonoBehaviour
             myorientation = orientation.Down;
         }
 
-        if (myorientation == orientation.Right) {
+        if (myorientation == orientation.Right)
+        {
             Quaternion right = Quaternion.Euler(0, 90, 0);
-            transform.rotation = Quaternion.Lerp(transform.rotation, right, 0.1f );
+            transform.rotation = Quaternion.Lerp(transform.rotation, right, 0.1f);
         }
         else if (myorientation == orientation.Left)
         {
@@ -68,5 +70,3 @@ public class Mouvement : MonoBehaviour
         }
     }
 }
-
-
