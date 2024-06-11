@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public List<GameObject> items = new List<GameObject>();
-    public List<TextMeshProUGUI> itemSlots = new List<TextMeshProUGUI>(); // Liste des textes de slots d'inventaire
+    public List<Text> itemSlots = new List<Text>(); // Liste des textes de slots d'inventaire
 
     public void AddItem(GameObject item)
     {
