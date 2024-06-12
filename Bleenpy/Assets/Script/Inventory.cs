@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -24,4 +23,3 @@ public class Inventory : MonoBehaviour
         keyCountText.text = "Keys: " + keyCount.ToString();
     }
 }
-
