@@ -5,36 +5,23 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public List<GameObject> items = new List<GameObject>();
-    public List<Text> itemSlots = new List<Text>(); // Liste des textes de slots d'inventaire
+    public int keyCount = 0; // Compteur de clés
+    public Text keyCountText; // Texte pour afficher le nombre de clés
 
-    public void AddItem(GameObject item)
+    void Start()
     {
-        items.Add(item);
-        UpdateInventoryUI();
-        Debug.Log("Item added: " + item.name);
+        UpdateKeyCountUI();
     }
 
-    public void RemoveItem(GameObject item)
+    public void AddKey()
     {
-        items.Remove(item);
-        UpdateInventoryUI();
-        Debug.Log("Item removed: " + item.name);
+        keyCount++;
+        UpdateKeyCountUI();
     }
 
-    private void UpdateInventoryUI()
+    private void UpdateKeyCountUI()
     {
-        for (int i = 0; i < itemSlots.Count; i++)
-        {
-            if (i < items.Count)
-            {
-                itemSlots[i].text = items[i].GetComponent<InteractableObject>().GetItemName();
-            }
-            else
-            {
-                itemSlots[i].text = "";
-            }
-        }
+        keyCountText.text = "Keys: " + keyCount.ToString();
     }
 }
 
