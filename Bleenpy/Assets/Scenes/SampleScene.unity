@@ -10491,7 +10491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suctionSpeed: 10000
-  victoryScreen: {fileID: 1415183652}
+  victoryCanvas: {fileID: 1403585130}
 --- !u!114 &1415183652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16896,7 +16896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2021469850
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using System.Collections;
 public class Tower : MonoBehaviour
 {
     public float suctionSpeed = 5f; // Vitesse d'aspiration
-    public VictoryScreen victoryScreen; // Référence au script VictoryScreen
+    public GameObject victoryCanvas; // Référence au canvas contenant l'écran de victoire
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,7 +30,7 @@ public class Tower : MonoBehaviour
 
         // Action après que le joueur soit aspiré (optionnel)
         // Par exemple : charger une nouvelle scène, afficher un message, etc
-        victoryScreen.DisplayVictoryScreen();
+        victoryCanvas.SetActive(true);
 
     }
 }
