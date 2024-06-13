@@ -13,7 +13,7 @@ public class InstructionUI : MonoBehaviour
 
     public void ShowInstructionsAtStart()
     {
-        instructionText.text = "Bienvenue dans le jeu !\n\nBut du jeu : Récupérez les 6 clés disséminées dans l'île et amenez-les à la tour principale avec un maisonnette dessus pour gagner";
+        instructionText.text = "Goal of the game: Collect the 6 keys scattered around the island and bring them to the main tower with a house on it to win";
         instructionPanel.SetActive(true);
     }
 
