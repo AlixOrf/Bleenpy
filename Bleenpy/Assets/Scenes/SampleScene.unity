@@ -7033,7 +7033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1964581690}
   offset: {x: 0, y: 5, z: -7}
-  smoothSpeed: 0.25
+  smoothSpeed: 2
 --- !u!1001 &988142250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15658,7 +15658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0645665ed5e1540ba0225e0aa9a949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  world: {fileID: 84888690}
+  world: {fileID: 0}
   horizontalInput: 0
   verticalInput: 0
   speed: 3
@@ -16478,7 +16478,7 @@ MonoBehaviour:
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

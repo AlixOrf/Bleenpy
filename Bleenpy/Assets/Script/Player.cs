@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public int totalKeysNeeded = 6; // Nombre total de clés nécessaires
     public Transform finalTower; // Référence à la tour finale
     public float attractionSpeed = 5f; // Vitesse à laquelle le joueur est attiré vers la tour
-    private bool controlsEnabled = true; // Déclaration de controlsEnabled
 
 
     void Start()
@@ -54,7 +53,6 @@ public class Player : MonoBehaviour
 
     public void DisableControls()
     {
-        controlsEnabled = false;
         myRB.velocity = Vector3.zero;
     }
 }

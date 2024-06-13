@@ -11,20 +11,19 @@ public class Mouvement : MonoBehaviour
     public enum orientation { Left, Right, Up, Down };
     public orientation myorientation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * Time.deltaTime * verticalInput * speed, Space.World);
-        transform.Translate(Vector3.right * Time.deltaTime * horizontalInput * speed, Space.World);
+        // Utiliser Time.deltaTime pour normaliser la vitesse en fonction du temps
+        float horizontalSpeed = horizontalInput * speed * Time.deltaTime;
+        float verticalSpeed = verticalInput * speed * Time.deltaTime;
+
+        // Déplacer le personnage en fonction des entrées horizontales et verticales
+        transform.Translate(Vector3.right * horizontalSpeed, Space.World);
+        transform.Translate(Vector3.forward * verticalSpeed, Space.World);
 
         Tourne();
     }
