@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public Transform finalTower; // Référence à la tour finale
     public float attractionSpeed = 5f; // Vitesse à laquelle le joueur est attiré vers la tour
 
+    private AudioSource audioSource; // Référence à l'AudioSource
+    public AudioClip keyCollectSound; // Référence à l'effet sonore
 
     void Start()
     {
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
         {
             inventory = GetComponent<Inventory>();
         }
+        audioSource = GetComponent<AudioSource>(); // Récupérer la référence à l'AudioSource
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,6 +29,12 @@ public class Player : MonoBehaviour
             Debug.Log("Key detected.");
             inventory.AddKey();
             Destroy(other.gameObject); // Détruire la clé
+
+            // Jouer l'effet sonore
+            if (audioSource != null && keyCollectSound != null)
+            {
+                audioSource.PlayOneShot(keyCollectSound);
+            }
 
             // Vérifie si le joueur a toutes les clés et si la coroutine n'est pas déjà en cours d'exécution
             if (HasAllKeys() && !IsInvoking("MoveToTower"))
@@ -53,6 +62,6 @@ public class Player : MonoBehaviour
 
     public void DisableControls()
     {
-        myRB.velocity = Vector3.zero;
+        // Désactiver les contrôles du joueur (implémentation à ajouter)
     }
 }
